@@ -1,87 +1,152 @@
-/* General Styles */
+/* Modern Color Palette */
+:root {
+    --primary: #E63946;    
+    --secondary: #457B9D;  
+    --accent: #A8DADC;     
+    --light: #F1FAEE;      
+    --dark: #1D3557;       
+    --highlight: #FFD166;  
+}
+
+/* Base Styles */
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    background-color: var(--light);
     color: #333;
-    background-color: #f9f5f0;
+    line-height: 1.7;
 }
 
-/* Hero Image */
+/* Centered Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
 .hero-image {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('images/hero-banner.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: linear-gradient(135deg, var(--dark), var(--secondary));
     color: white;
     text-align: center;
-    padding: 0 20px;
+    padding: 60px 20px;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 40px;
 }
 
-/* Introduction Section */
-.intro-section {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin: 40px auto;
-    max-width: 1200px;
-    padding: 0 20px;
-}
-
-.ID-picture {
-    width: 50%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.intro-text {
-    width: 50%;
+.hero-image h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 /* Menu Section */
-.menu-category {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+#menu {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin: 40px auto;
 }
 
-.menu-item {
+#menu h2 {
+    color: var(--dark);
+    text-align: center;
+    font-size: 2.2rem;
     margin-bottom: 30px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#menu h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--primary);
+    margin: 10px auto;
+}
+
+.menu-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-items li {
+    padding: 15px;
+    margin: 15px 0;
+    background-color: var(--light);
+    border-left: 5px solid var(--primary);
+    border-radius: 0 8px 8px 0;
+    transition: transform 0.3s;
+}
+
+.menu-items li:hover {
+    transform: translateX(10px);
 }
 
 /* Contact Section */
-.contact-info {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#contact {
+    background-color: var(--dark);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin: 40px auto;
 }
 
-.student-info {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
+#contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--highlight);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-card {
+    background-color: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+    border-top: 3px solid var(--highlight);
+}
+
+/* Image Adjustments */
+.ID-picture {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    display: block;
+    margin: 30px auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--dark);
+    color: white;
+    margin-top: 50px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .intro-section {
+    .hero-image h1 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-info {
         flex-direction: column;
     }
     
-    .intro-image, .intro-text {
-        width: 100%;
+    .menu-items li {
+        padding: 12px;
     }
 }

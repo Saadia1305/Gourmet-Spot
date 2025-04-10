@@ -1,4 +1,3 @@
-
 :root {
     --primary: #E63946;    
     --secondary: #457B9D;  
@@ -8,7 +7,6 @@
     --highlight: #FFD166;  
 }
 
-/* Base Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
